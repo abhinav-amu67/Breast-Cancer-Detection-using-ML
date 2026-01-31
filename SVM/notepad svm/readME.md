@@ -1,7 +1,9 @@
-# Breast Cancer Detection using SVM
+# Breast Cancer Detection using SVM (Threshold Optimized)
 
-This project uses a Support Vector Machine (SVM) with RBF kernel to classify
-breast cancer tumors as Malignant or Benign using the Wisconsin Breast Cancer Dataset.
+This project implements a Support Vector Machine (SVM) classifier for breast
+cancer detection using the Wisconsin Breast Cancer Dataset.  
+In addition to the default decision threshold (0.5), the model is further
+improved by selecting an optimal threshold based on ROC analysis.
 
 Dataset:
 - Source: sklearn.datasets.load_breast_cancer
@@ -14,15 +16,17 @@ Dataset:
 Model Configuration:
 - Algorithm: Support Vector Machine (SVM)
 - Kernel: RBF
-- C: 10 (from gridCV analysis)
-- Gamma: scale (from gridCV analysis)
-- Probability: True
+- C: 10 (by grid searchCV)
+- Gamma: scale (by grid searchCV)
+- Probability Enabled: True
 - Feature Scaling: StandardScaler
 
-Results (Default Threshold = 0.5):
+--------------------------------------------------
+Results with Default Threshold (0.5)
+--------------------------------------------------
 
-Confusion Matrix:
-    [[46  4]<br>
+Confusion Matrix:     <br>
+    [[46  4]      <br>
      [ 1 92]]
 
 Classification Report:
@@ -33,9 +37,37 @@ Classification Report:
 | Benign (1) | 0.96 | 0.99 | 0.97 |
 
 Accuracy: 97%
-ROC Curve:
-- ROC-AUC ≈ 0.99
-  
+
+--------------------------------------------------
+ROC Curve & Threshold Optimization
+--------------------------------------------------
+
+- ROC-AUC Score: 0.9965
+- Best Threshold (Youden’s J statistic): 0.7140
+
+--------------------------------------------------
+Results with Best Threshold (0.714)
+--------------------------------------------------
+
+Confusion Matrix:     <br>
+    [[49  1]       <br>
+     [ 1 92]]
+
+Classification Report:
+
+| Class | Precision | Recall | F1-score |
+|------|----------|--------|---------|
+| Malignant (0) | 0.98 | 0.98 | 0.98 |
+| Benign (1) | 0.99 | 0.99 | 0.99 |
+
+Accuracy: 99%
+
+Key Insight:
+Optimizing the decision threshold significantly improves recall for the
+Malignant class, which is critical in medical diagnosis where false negatives
+are more dangerous than false positives.
+
+
 How to Run:
     python svm_model.py
 
@@ -44,14 +76,17 @@ Dependencies:
 
 Project Structure:
     Breast-Cancer-Detection-using-ML/
-    ├── svm_model.py
+    ├── SVM/
+    │   └── svm_model.py
     ├── svm_screenshots/
-    │   ├── confusion_matrix.png
-    │   └── roc_curve.png
+    │   ├── roc_curve.png
+    │   └── confusion_matrix.png
     └── README.md
 
 Author:
 Abhinav Kumar  
 B.Tech (Electronics Engineering)  
 Machine Learning Enthusiast
+
+
 
