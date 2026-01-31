@@ -16,8 +16,8 @@ This module applies Logistic Regression to classify breast tumors as malignant o
 
 - Accuracy: **97.20%**
 
-Confusion Matrix:
-[[46 4]
+Confusion Matrix:<br>
+[[46 4] <br>
 [ 0 93]]
 
 
@@ -40,8 +40,8 @@ ROC analysis was used to identify an optimal decision threshold.
 
 - Accuracy: **98.60%**
 
-Confusion Matrix:
-[[48 2]
+Confusion Matrix:<br>
+[[48 2]<br>
 [ 0 93]]
 
 Improvements after threshold tuning:
@@ -50,11 +50,12 @@ Improvements after threshold tuning:
 - Better precision–recall balance
 
 ---
-
 ### ROC Curve Visualization
 
 ```text
 logistic_model/logistic_model_screenshots/roc_curve.png
+![ROC Curve](logistic_model/logistic_model_screenshots/roc_curve.png)
+
 
 
 
