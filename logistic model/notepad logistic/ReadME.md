@@ -50,12 +50,6 @@ Improvements after threshold tuning:
 - Better precision–recall balance
 
 ---
-### ROC Curve Visualization
-
-```text
-logistic_model/logistic_model_screenshots/roc_curve.png
-![ROC Curve](logistic_model/logistic_model_screenshots/roc_curve.png)
-
 
 
 
