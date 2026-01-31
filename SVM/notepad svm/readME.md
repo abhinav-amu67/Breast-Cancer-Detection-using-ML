@@ -14,15 +14,15 @@ Dataset:
 Model Configuration:
 - Algorithm: Support Vector Machine (SVM)
 - Kernel: RBF
-- C: 1
-- Gamma: scale
+- C: 10 (from gridCV analysis)
+- Gamma: scale (from gridCV analysis)
 - Probability: True
 - Feature Scaling: StandardScaler
 
 Results (Default Threshold = 0.5):
 
 Confusion Matrix:
-    [[46  4]
+    [[46  4]<br>
      [ 1 92]]
 
 Classification Report:
@@ -33,15 +33,9 @@ Classification Report:
 | Benign (1) | 0.96 | 0.99 | 0.97 |
 
 Accuracy: 97%
-
-Confusion Matrix Visualization:
-![Confusion Matrix](svm_screenshots/confusion_matrix.png)
-
 ROC Curve:
 - ROC-AUC ≈ 0.99
-
-![ROC Curve](svm_screenshots/roc_curve.png)
-
+  
 How to Run:
     python svm_model.py
 
@@ -60,3 +54,4 @@ Author:
 Abhinav Kumar  
 B.Tech (Electronics Engineering)  
 Machine Learning Enthusiast
+
