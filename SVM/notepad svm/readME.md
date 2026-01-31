@@ -16,8 +16,8 @@ Dataset:
 Model Configuration:
 - Algorithm: Support Vector Machine (SVM)
 - Kernel: RBF
-- C: 10 (by grid searchCV)
-- Gamma: scale (by grid searchCV)
+- C: 1 (we must search for better result not GridSearchCV)
+- Gamma: scale 
 - Probability Enabled: True
 - Feature Scaling: StandardScaler
 
@@ -87,6 +87,7 @@ Author:
 Abhinav Kumar  
 B.Tech (Electronics Engineering)  
 Machine Learning Enthusiast
+
 
 
 
